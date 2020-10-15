@@ -59,7 +59,7 @@ def show_melon(melon_id):
 @app.route("/cart")
 def show_shopping_cart():
     """Display content of shopping cart."""
-
+    
     # TODO: Display the contents of the shopping cart.
 
     # The logic here will be something like:
@@ -98,7 +98,9 @@ def add_to_cart(melon_id):
     else:
         session["cart"]= {}
 
-    # session = {cart={melon_id:count}, login}
+    #I thought about it a little more, and I think the nested dictionaries might actually look like this?
+    #because that's not confusing at all...but I'm %30000 not sure.
+    # session = {{"cart":{melon_id:count, other_melon_id:count}}, {{login:{user_id: pass_word, other_user_id:password}}
     flash("Melon successfully added")
     flash(session["cart"])
     # TODO: Finish shopping cart functionality
